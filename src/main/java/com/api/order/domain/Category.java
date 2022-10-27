@@ -5,6 +5,7 @@ import com.api.order.domain.response.CategoryResponse;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,6 +22,8 @@ public class Category {
 
     private String name;
 
+    @ManyToMany(mappedBy = "categories")
+    private List<Product> products;
     public CategoryResponse toResponse() {
         return CategoryResponse.builder().categoryId(this.categoryId).name(this.name).build();
     }

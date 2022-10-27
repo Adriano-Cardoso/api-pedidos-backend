@@ -9,11 +9,13 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryResponse {
+public class ProductResponse {
 
-    private Long categoryId;
+    private Long productId;
+
     private String name;
 
-    private List<CategoryResponse> categoryResponses;
+    private Double price;
 
+    private List<CategoryResponse> categoryResponses;
 }

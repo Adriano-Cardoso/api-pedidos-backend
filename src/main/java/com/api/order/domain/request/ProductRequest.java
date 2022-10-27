@@ -9,9 +9,11 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryRequest {
+public class ProductRequest {
 
     private String name;
 
-    private List<ProductRequest> productRequests;
+    private Double price;
+
+    private List<CategoryRequest> categoryRequests;
 }
