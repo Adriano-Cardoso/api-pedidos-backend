@@ -1,14 +1,14 @@
 package com.api.order.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import com.api.order.domain.request.CategoryRequest;
+import com.api.order.domain.response.CategoryResponse;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @AllArgsConstructor
 @Table(name = "tb_category")
@@ -19,4 +19,12 @@ public class Category {
     private Long categoryId;
 
     private String name;
+
+    public CategoryResponse toResponse() {
+        return CategoryResponse.builder().categoryId(this.categoryId).name(this.name).build();
+    }
+
+    public static  Category of(CategoryRequest categoryRequest){
+        return Category.builder().name(categoryRequest.getName()).build();
+    }
 }
