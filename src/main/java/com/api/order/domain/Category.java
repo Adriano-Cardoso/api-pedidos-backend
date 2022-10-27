@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tb_category")
 public class Category {
 
