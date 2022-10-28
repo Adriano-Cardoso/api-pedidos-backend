@@ -1,9 +1,10 @@
 package com.api.order.domain;
 
+import com.api.order.domain.request.ProductRequest;
+import com.api.order.domain.response.ProductResponse;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,9 +23,29 @@ public class Product {
 
     private Double price;
 
-    @ManyToMany
-    @JoinTable(name = "tb_product_category",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private List<Category> categories;
+    @Column(name = "category_id", nullable = true, insertable = false, updatable = false)
+    private Long categoryId;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, optional = false)
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    private Category category;
+
+    public static Product of(ProductRequest productRequest) {
+        return Product.builder()
+                .name(productRequest.getName())
+                .price(productRequest.getPrice())
+                .categoryId(productRequest.getCategoryId()).build();
+    }
+
+    public ProductResponse toResponse() {
+        return ProductResponse.builder().productId(this.getProductId())
+                .name(this.getName())
+                .price(this.price).categoryId(this.categoryId).build();
+    }
+
+    public void addCategory(Category category) {
+        this.category = category;
+        this.categoryId = category.getCategoryId();
+
+    }
 }

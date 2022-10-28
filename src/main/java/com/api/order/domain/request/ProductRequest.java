@@ -15,5 +15,5 @@ public class ProductRequest {
 
     private Double price;
 
-    private List<CategoryRequest> categoryRequests;
+    private Long categoryId;
 }

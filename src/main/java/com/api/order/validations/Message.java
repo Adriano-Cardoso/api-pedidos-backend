@@ -4,7 +4,9 @@ import com.api.order.exception.BusinessException;
 import org.springframework.http.HttpStatus;
 public enum Message {
     NOT_FOUND_ID_CATEGORY("O Id da categoria não foi encontrado", HttpStatus.NOT_FOUND),
-    NAME_EXISTS("O nome da categoria já existe em nossa base de dados", HttpStatus.BAD_REQUEST );
+    NAME_EXISTS("O nome da categoria já existe em nossa base de dados", HttpStatus.BAD_REQUEST ),
+    NOT_FOUND_ID_PRODUCT("Id do produto não encontrado", HttpStatus.NOT_FOUND ),
+    NAME_PRODUCT_EXISTS("Nome do produto já existe em nossa base", HttpStatus.BAD_REQUEST);
 
     private String value;
     private String description;

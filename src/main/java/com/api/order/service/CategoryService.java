@@ -1,8 +1,10 @@
 package com.api.order.service;
 
 import com.api.order.domain.Category;
+import com.api.order.domain.Product;
 import com.api.order.domain.request.CategoryRequest;
 import com.api.order.domain.response.CategoryResponse;
+import com.api.order.domain.response.ProductResponse;
 import com.api.order.repository.CategoryRepository;
 import com.api.order.validations.Message;
 import lombok.AllArgsConstructor;
@@ -17,6 +19,7 @@ import org.springframework.validation.annotation.Validated;
 public class CategoryService {
 
     private CategoryRepository categoryRepository;
+    
 
     public  CategoryResponse createNewCategory(CategoryRequest categoryRequest){
 
@@ -32,10 +35,10 @@ public class CategoryService {
         return category.toResponse();
     }
 
-    public CategoryResponse findByIdCategory(Long categoryId){
+    public Category findByIdCategory(Long categoryId){
         Category category = this.categoryRepository.findById(categoryId)
                 .orElseThrow(Message.NOT_FOUND_ID_CATEGORY::asBusinessException);
 
-        return category.toResponse();
+        return category;
     }
 }

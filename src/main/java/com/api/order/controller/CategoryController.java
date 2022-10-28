@@ -22,9 +22,5 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.categoryService.createNewCategory(categoryRequest));
     }
 
-    @ApiOperation(value = "Busca a categoria pelo id")
-    @GetMapping("/{categoryId}")
-    public ResponseEntity<CategoryResponse> findById(@PathVariable("categoryId") Long categoryId){
-        return ResponseEntity.status(HttpStatus.OK).body(this.categoryService.findByIdCategory(categoryId));
-    }
+
 }
