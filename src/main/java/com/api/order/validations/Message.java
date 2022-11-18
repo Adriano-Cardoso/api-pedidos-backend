@@ -9,7 +9,8 @@ public enum Message {
     NAME_PRODUCT_EXISTS("Nome do produto já existe em nossa base", HttpStatus.BAD_REQUEST),
     NAME_STATE_EXISTS("O Estado já existe em nossa basa", HttpStatus.BAD_REQUEST),
     NAME_CITY_EXISTS("O nome da cidade já existe em nossa base", HttpStatus.BAD_REQUEST),
-    NOT_FOUND_ID_CITY("Id da cidade não existe", HttpStatus.NOT_FOUND);
+    NOT_FOUND_ID_CITY("Id da cidade não existe", HttpStatus.NOT_FOUND),
+    ID_INVALLID("Id inválido", HttpStatus.BAD_REQUEST);
 
     private String value;
     private String description;
