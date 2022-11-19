@@ -5,7 +5,6 @@ import com.api.order.domain.response.CategoryResponse;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -24,13 +23,16 @@ public class Category {
 
     private String name;
 
-    public CategoryResponse toResponse() {
-        return CategoryResponse.builder().categoryId(this.categoryId).name(this.name).build();
-    }
+    @ManyToMany(mappedBy = "categoryId")
+    private List<Product> products;
 
-    public static  Category of(CategoryRequest categoryRequest){
+    public static Category of(CategoryRequest categoryRequest) {
         return Category.builder()
                 .name(categoryRequest.getName()).build();
+    }
+
+    public CategoryResponse toResponse() {
+        return CategoryResponse.builder().categoryId(this.categoryId).name(this.name).build();
     }
 
 

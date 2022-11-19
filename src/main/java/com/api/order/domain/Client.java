@@ -1,6 +1,8 @@
 package com.api.order.domain;
 
 import com.api.order.domain.enums.TypeClient;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,11 +24,14 @@ public class Client {
     private String name;
     private String email;
     private String cpfOuCnpj;
-    private TypeClient type;
+    private TypeClient typeClient;
 
     @Column(name = "addressId", nullable = true, insertable = false, updatable = false)
     private Long addressId;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders;
 
     @OneToMany(mappedBy = "client")
     private List<Adresses> addresses;
