@@ -1,10 +1,6 @@
 
 n
 >src/main/java/com/api/order/domain/request/ProductRequest.java,7/d/7db6e33628b131377770e30b9460851cdd306bb7
-n
->src/main/java/com/api/order/repository/CategoryRepository.java,b/9/b987be140667ca5ae35a022fa75bd329f5b6e486
-q
-Asrc/main/java/com/api/order/domain/response/CategoryResponse.java,b/4/b42cd21f352f222da79e4e807038a326050ff44d
 m
 =src/main/java/com/api/order/domain/response/CityResponse.java,3/e/3e3abffd09674a4efee230eb45afb2766227e111
 j
@@ -25,5 +21,3 @@ n
 >src/main/java/com/api/order/domain/response/StateResponse.java,3/4/340910b7f036de479870488e05e9c0f576e63fd8
 k
 ;src/main/java/com/api/order/domain/request/CityRequest.java,9/9/994ae950082e5a505241a7ebeb5bb0c31f3ea240
-o
-?src/main/java/com/api/order/domain/request/CategoryRequest.java,0/5/055f63110f8bae8aa8f5437a31f0847d8f35a754

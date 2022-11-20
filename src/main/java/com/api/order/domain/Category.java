@@ -36,4 +36,7 @@ public class Category {
     }
 
 
+    public void update(CategoryRequest categoryRequest) {
+        this.name = categoryRequest.getName();
+    }
 }
