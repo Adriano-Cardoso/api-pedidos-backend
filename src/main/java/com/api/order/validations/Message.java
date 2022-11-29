@@ -10,7 +10,10 @@ public enum Message {
     NAME_STATE_EXISTS("O Estado já existe em nossa basa", HttpStatus.BAD_REQUEST),
     NAME_CITY_EXISTS("O nome da cidade já existe em nossa base", HttpStatus.BAD_REQUEST),
     NOT_FOUND_ID_CITY("Id da cidade não existe", HttpStatus.NOT_FOUND),
-    ID_INVALLID("Id inválido", HttpStatus.BAD_REQUEST);
+    ID_INVALLID("Id inválido", HttpStatus.BAD_REQUEST),
+    CPF_OR_CNPJ_EXISTS("O cpf ou cnpj digitado já existe em nossa base de dados", HttpStatus.BAD_REQUEST),
+    NOT_FOUND_ID_ADDRESS("O id do endereço soliciata não foi encontrado", HttpStatus.NOT_FOUND),
+    NOT_FOUND_ID_CLIENT("o Id do cliente não foi encontrado",  HttpStatus.NOT_FOUND);
 
     private String value;
     private String description;

@@ -12,10 +12,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_address")
-public class Adresses {
+public class Addresses {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id", nullable = false)
     private Long addressId;
     private String logradouro;
     private String number;
@@ -23,12 +24,15 @@ public class Adresses {
     private String bairro;
     private String cep;
 
+    @Column(name = "client_id", nullable = true, insertable = false, updatable = false)
+    private  Long clientId;
+
     @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "client_id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "client_id", referencedColumnName = "client_id", nullable = true)
     private Client client;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city_id", nullable = true)
     private City city;
 }

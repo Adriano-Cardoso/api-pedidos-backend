@@ -9,7 +9,7 @@ public enum TypeClient {
     PESSOAFISICA(1, "Pessoa Física"),
     PESSOAJURIDICA(2, "PESSOA JURIDICA");
 
-    private int code;
+    private Integer code;
     private String description;
 
     TypeClient(int code, String description) {

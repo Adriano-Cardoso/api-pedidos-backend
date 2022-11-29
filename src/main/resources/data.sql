@@ -20,11 +20,11 @@ INSERT INTO tb_city(name, state_id) VALUES ('Campinas', 1);
 
 --inserindo cliente
 INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (1, '12312345671', 'tonystark@email.com', 'Tony Stark', 2);
-INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (1, '12312345672', 'piterparker@email.com', 'Piter Parker', 1);
-INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (2, '12312345673', 'brucewayne@email.com', 'Bruce Wayne', 2);
-INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (2, '12312345674', 'alfredpenilorf@email.com', 'Alfred Penilorf', 1);
-INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (3, '12312345675', 'geraldderivia@email.com', 'Gerald de Rivia', 2);
-INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (3, '12312345676', 'kratos@email.com', 'Kratos', 1);
+INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (2, '12312345672', 'piterparker@email.com', 'Piter Parker', 1);
+INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (3, '12312345673', 'brucewayne@email.com', 'Bruce Wayne', 2);
+INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (4, '12312345674', 'alfredpenilorf@email.com', 'Alfred Penilorf', 1);
+INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (5, '12312345675', 'geraldderivia@email.com', 'Gerald de Rivia', 2);
+INSERT INTO tb_client(address_id, cpf_ou_cnpj, email, name, type_client) VALUES (6, '12312345676', 'kratos@email.com', 'Kratos', 1);
 
 -- Inserindo endereço
 INSERT INTO tb_address(bairro, cep, complemento, logradouro, number, city_id, client_id) VALUES ('Avenida Boa viagem','345930223', 'Apto 303', 'Praça', '300', 1, 1);

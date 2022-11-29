@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.context.annotation.EnableMBeanExport;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -37,7 +36,7 @@ public class Order {
 
     @ManyToOne()
     @JoinColumn(name = "endereco_de_entrega_id")
-    private Adresses adresses;
+    private Addresses addresses;
 
     @OneToMany(mappedBy = "itemOrderpkId.order")
     private Set<ItemOrder> items;
